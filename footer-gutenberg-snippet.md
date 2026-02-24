@@ -1,440 +1,576 @@
-## HTML (Gutenberg Custom HTML)
-
 ```html
-<footer class="pk-footer" role="contentinfo" aria-label="Footer">
-  <div class="pk-footer__top" aria-label="Schnellzugriff und Vorteile">
-    <p class="pk-footer__value-prop">Professionelle Sprachaufnahmen aus eigenem Studio – präzise, zuverlässig und sendefertig.</p>
+<footer id="pk-footer-2026" role="contentinfo" aria-label="Website Footer">
+  <style>
+    #pk-footer-2026 {
+      --pk-primary: #1a93ee;
+      --pk-primary-hover: #0066b3;
+      --pk-bg: #0f141a;
+      --pk-text: rgba(255, 255, 255, 0.88);
+      --pk-muted: rgba(255, 255, 255, 0.62);
+      --pk-border: rgba(255, 255, 255, 0.08);
+      --pk-radius: 20px;
+      --pk-shadow: 0 10px 30px rgba(0, 0, 0, 0.22), 0 0 0 1px rgba(26, 147, 238, 0.08);
+      --pk-glow: 0 0 0 1px rgba(26, 147, 238, 0.24), 0 10px 28px rgba(26, 147, 238, 0.18);
 
-    <ul class="pk-footer__trust" aria-label="Vorteile auf einen Blick">
-      <li>
-        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2Zm4.6 8.2-5.1 6a1 1 0 0 1-1.5.1l-2.6-2.6 1.4-1.4 1.8 1.8 4.4-5.2Z"/></svg>
-        <span>24h Lieferung</span>
-      </li>
-      <li>
-        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1Z"/></svg>
-        <span>Broadcast-Qualität</span>
-      </li>
-      <li>
-        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 1 3 5v6c0 5.6 3.8 10.8 9 12 5.2-1.2 9-6.4 9-12V5Zm0 10.4L8.7 8.1l1.4-1.4L12 8.6l4-4 1.4 1.4Z"/></svg>
-        <span>Nutzungsrechte klar</span>
-      </li>
-    </ul>
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: var(--pk-text);
+      background: linear-gradient(180deg, #121922 0%, var(--pk-bg) 100%);
+      border-top: 1px solid var(--pk-border);
+      padding: clamp(24px, 4vw, 48px) clamp(16px, 4vw, 64px);
+      box-sizing: border-box;
+    }
 
-    <div class="pk-footer__quick-cta">
-      <a class="pk-btn pk-btn--primary" href="#">Projekt anfragen</a> <!-- TODO: Link ersetzen -->
-      <a class="pk-btn pk-btn--ghost" href="#">Hörproben</a> <!-- TODO: Link ersetzen -->
+    #pk-footer-2026 *,
+    #pk-footer-2026 *::before,
+    #pk-footer-2026 *::after {
+      box-sizing: border-box;
+    }
+
+    #pk-footer-2026 .pk-wrap {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: grid;
+      gap: clamp(24px, 3.4vw, 48px);
+    }
+
+    #pk-footer-2026 a {
+      color: inherit;
+      text-decoration-color: transparent;
+      text-underline-offset: 0.18em;
+      transition: color 180ms ease, text-decoration-color 180ms ease, border-color 180ms ease, background-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+    }
+
+    #pk-footer-2026 a:hover {
+      color: var(--pk-primary);
+      text-decoration-color: rgba(26, 147, 238, 0.6);
+    }
+
+    #pk-footer-2026 a:focus-visible,
+    #pk-footer-2026 button:focus-visible,
+    #pk-footer-2026 input:focus-visible {
+      outline: 2px solid var(--pk-primary);
+      outline-offset: 2px;
+    }
+
+    #pk-footer-2026 .pk-card {
+      border: 1px solid var(--pk-border);
+      border-radius: var(--pk-radius);
+      background: rgba(255, 255, 255, 0.02);
+      box-shadow: var(--pk-shadow);
+    }
+
+    #pk-footer-2026 .pk-utility {
+      padding: clamp(24px, 3vw, 36px);
+      display: grid;
+      gap: 24px;
+    }
+
+    #pk-footer-2026 .pk-utility-top {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: 1.5fr auto;
+      align-items: center;
+    }
+
+    #pk-footer-2026 .pk-value {
+      margin: 0;
+      font-size: clamp(1rem, 1.5vw, 1.15rem);
+      line-height: 1.6;
+      max-width: 60ch;
+    }
+
+    #pk-footer-2026 .pk-cta-group {
+      display: flex;
+      gap: 12px;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+    }
+
+    #pk-footer-2026 .pk-btn {
+      min-height: 46px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    #pk-footer-2026 .pk-btn--primary {
+      background: var(--pk-primary);
+      color: #fff;
+      box-shadow: 0 8px 24px rgba(26, 147, 238, 0.28);
+    }
+
+    #pk-footer-2026 .pk-btn--primary:hover,
+    #pk-footer-2026 .pk-btn--primary:focus-visible {
+      color: #fff;
+      background: var(--pk-primary-hover);
+      transform: translateY(-1px);
+    }
+
+    #pk-footer-2026 .pk-btn--ghost {
+      border-color: rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.02);
+      color: var(--pk-text);
+    }
+
+    #pk-footer-2026 .pk-btn--ghost:hover,
+    #pk-footer-2026 .pk-btn--ghost:focus-visible {
+      border-color: rgba(26, 147, 238, 0.5);
+      background: rgba(26, 147, 238, 0.14);
+    }
+
+    #pk-footer-2026 .pk-trust-items {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    #pk-footer-2026 .pk-trust-items li {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      border: 1px solid var(--pk-border);
+      border-radius: 999px;
+      padding: 10px 14px;
+      color: var(--pk-muted);
+      font-size: 0.92rem;
+      min-height: 44px;
+    }
+
+    #pk-footer-2026 .pk-trust-items svg {
+      flex: 0 0 16px;
+      width: 16px;
+      height: 16px;
+      fill: var(--pk-primary);
+    }
+
+    #pk-footer-2026 .pk-mega {
+      display: grid;
+      gap: clamp(20px, 2.4vw, 32px);
+      grid-template-columns: 1.2fr repeat(3, 1fr) 1.1fr;
+      align-items: start;
+    }
+
+    #pk-footer-2026 .pk-col h3,
+    #pk-footer-2026 .pk-col h4 {
+      margin: 0 0 14px;
+      color: #fff;
+      line-height: 1.25;
+    }
+
+    #pk-footer-2026 .pk-col h3 { font-size: clamp(1.1rem, 1.7vw, 1.35rem); }
+    #pk-footer-2026 .pk-col h4 { font-size: 1rem; }
+
+    #pk-footer-2026 .pk-col p {
+      margin: 0 0 12px;
+      color: var(--pk-muted);
+      line-height: 1.65;
+    }
+
+    #pk-footer-2026 .pk-brand,
+    #pk-footer-2026 .pk-contact-card {
+      padding: clamp(20px, 2.5vw, 28px);
+      min-height: 100%;
+    }
+
+    #pk-footer-2026 .pk-brand-name {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      color: #fff;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+    }
+
+    #pk-footer-2026 .pk-logo-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #67c0ff, var(--pk-primary));
+      box-shadow: 0 0 0 5px rgba(26, 147, 238, 0.12);
+    }
+
+    #pk-footer-2026 .pk-social {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 16px 0 12px;
+      padding: 0;
+      list-style: none;
+    }
+
+    #pk-footer-2026 .pk-social a {
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      border: 1px solid var(--pk-border);
+      background: rgba(255, 255, 255, 0.02);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--pk-text);
+    }
+
+    #pk-footer-2026 .pk-social a:hover,
+    #pk-footer-2026 .pk-social a:focus-visible {
+      box-shadow: var(--pk-glow);
+      border-color: rgba(26, 147, 238, 0.45);
+      background: rgba(26, 147, 238, 0.12);
+    }
+
+    #pk-footer-2026 .pk-mini-trust {
+      margin: 0;
+      color: var(--pk-muted);
+      font-size: 0.9rem;
+    }
+
+    #pk-footer-2026 .pk-links {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    #pk-footer-2026 .pk-links a {
+      color: var(--pk-muted);
+    }
+
+    #pk-footer-2026 address {
+      margin: 0;
+      font-style: normal;
+      color: var(--pk-muted);
+      display: grid;
+      gap: 10px;
+    }
+
+    #pk-footer-2026 address a {
+      color: #fff;
+      font-weight: 600;
+      width: fit-content;
+    }
+
+    #pk-footer-2026 .pk-news {
+      padding: clamp(24px, 3vw, 36px);
+      display: grid;
+      gap: 16px;
+    }
+
+    #pk-footer-2026 .pk-news h4 {
+      margin: 0;
+      font-size: clamp(1.08rem, 1.5vw, 1.25rem);
+      color: #fff;
+    }
+
+    #pk-footer-2026 .pk-news p {
+      margin: 0;
+      color: var(--pk-muted);
+      line-height: 1.6;
+    }
+
+    #pk-footer-2026 .pk-news-form {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    #pk-footer-2026 .pk-news-input {
+      flex: 1 1 260px;
+      min-height: 46px;
+      border-radius: 14px;
+      border: 1px solid var(--pk-border);
+      background: rgba(255, 255, 255, 0.03);
+      color: #fff;
+      padding: 10px 14px;
+    }
+
+    #pk-footer-2026 .pk-news-input::placeholder {
+      color: rgba(255, 255, 255, 0.48);
+    }
+
+    #pk-footer-2026 .pk-note {
+      font-size: 0.84rem;
+    }
+
+    #pk-footer-2026 .pk-form-msg {
+      min-height: 1.2em;
+      font-size: 0.9rem;
+      margin: 2px 0 0;
+    }
+
+    #pk-footer-2026 .pk-form-msg[data-state="success"] { color: #8fe2b2; }
+    #pk-footer-2026 .pk-form-msg[data-state="error"] { color: #ff9b9b; }
+
+    #pk-footer-2026 .pk-bottom {
+      padding-top: 24px;
+      border-top: 1px solid var(--pk-border);
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: 14px 24px;
+      align-items: center;
+    }
+
+    #pk-footer-2026 .pk-bottom p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--pk-muted);
+    }
+
+    #pk-footer-2026 .pk-legal {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 16px;
+      margin: 0;
+      padding: 0;
+    }
+
+    #pk-footer-2026 .pk-top-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      border: 1px solid var(--pk-border);
+      background: rgba(255, 255, 255, 0.03);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    #pk-footer-2026 .pk-top-btn:hover,
+    #pk-footer-2026 .pk-top-btn:focus-visible {
+      border-color: rgba(26, 147, 238, 0.45);
+      background: rgba(26, 147, 238, 0.16);
+      box-shadow: var(--pk-glow);
+    }
+
+    @media (max-width: 1100px) {
+      #pk-footer-2026 .pk-mega {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      #pk-footer-2026 .pk-utility-top {
+        grid-template-columns: 1fr;
+      }
+
+      #pk-footer-2026 .pk-cta-group {
+        justify-content: flex-start;
+      }
+
+      #pk-footer-2026 .pk-trust-items {
+        grid-template-columns: 1fr;
+      }
+
+      #pk-footer-2026 .pk-bottom {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      #pk-footer-2026 .pk-mega {
+        grid-template-columns: 1fr;
+      }
+
+      #pk-footer-2026 .pk-cta-group {
+        width: 100%;
+      }
+
+      #pk-footer-2026 .pk-btn {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #pk-footer-2026 * {
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+
+  <div class="pk-wrap">
+    <section class="pk-utility pk-card" aria-label="Schnellzugriff und Vorteile">
+      <div class="pk-utility-top">
+        <p class="pk-value">Professionelle Voiceovers mit Broadcast-Qualität, klaren Nutzungsrechten und planbarer Umsetzung für Marken, Agenturen und Content-Teams.</p>
+        <div class="pk-cta-group">
+          <a class="pk-btn pk-btn--primary" href="TODO_URL_PROJEKT">Projekt anfragen</a>
+          <a class="pk-btn pk-btn--ghost" href="TODO_URL_HOERPROBEN">Hörproben</a>
+        </div>
+      </div>
+      <ul class="pk-trust-items" aria-label="Trust-Merkmale">
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2 3 6v6c0 5.2 3.4 9.9 9 11 5.6-1.1 9-5.8 9-11V6Zm-1.1 14.6-3.8-3.8 1.4-1.4 2.4 2.4 5-5 1.4 1.4Z"/></svg>
+          <span>Broadcast-Qualität</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 7h-2V5a5 5 0 0 0-10 0v2H5a2 2 0 0 0-2 2v8a5 5 0 0 0 5 5h8a5 5 0 0 0 5-5V9a2 2 0 0 0-2-2ZM9 5a3 3 0 1 1 6 0v2H9Zm8 12a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3V9h12Z"/></svg>
+          <span>Schnelle Lieferung</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 2 8 4v6c0 5.3-3.4 10-8 11-4.6-1-8-5.7-8-11V6Zm-1 12-3-3-1.4 1.4L11 16.8l6.4-6.4L16 9Z"/></svg>
+          <span>Klare Nutzungsrechte</span>
+        </li>
+      </ul>
+    </section>
+
+    <div class="pk-mega" aria-label="Main Mega Footer">
+      <section class="pk-col pk-brand pk-card" aria-labelledby="pk-brand-title">
+        <h3 id="pk-brand-title" class="pk-brand-name"><span class="pk-logo-dot" aria-hidden="true"></span>PK Voice Studio</h3>
+        <p>Präzise Sprachproduktionen für Werbung, E-Learning, Corporate Audio und digitale Kampagnen – persönlich betreut, technisch sauber umgesetzt.</p>
+        <nav aria-label="Social Media">
+          <ul class="pk-social">
+            <li><a href="TODO_URL_LINKEDIN" aria-label="LinkedIn">in</a></li>
+            <li><a href="TODO_URL_INSTAGRAM" aria-label="Instagram">ig</a></li>
+            <li><a href="TODO_URL_YOUTUBE" aria-label="YouTube">yt</a></li>
+          </ul>
+        </nav>
+        <p class="pk-mini-trust">★★★★★ Vertrauen von Agenturen, Brands und Produktionshäusern.</p>
+      </section>
+
+      <nav class="pk-col" aria-label="Footer Navigation Leistungen">
+        <h4>Leistungen</h4>
+        <ul class="pk-links">
+          <li><a href="TODO_URL_LEISTUNG_VOICEOVER">Voiceover Produktion</a></li>
+          <li><a href="TODO_URL_LEISTUNG_WERBESPOT">Werbespots &amp; Ads</a></li>
+          <li><a href="TODO_URL_LEISTUNG_IMAGEFILM">Imagefilm-Sprecher</a></li>
+          <li><a href="TODO_URL_LEISTUNG_ELEARNING">E-Learning Audio</a></li>
+          <li><a href="TODO_URL_LEISTUNG_PODCAST">Podcast Intros/Outros</a></li>
+          <li><a href="TODO_URL_LEISTUNG_POSTPRODUCTION">Schnitt &amp; Mastering</a></li>
+        </ul>
+      </nav>
+
+      <nav class="pk-col" aria-label="Footer Navigation Für Kunden">
+        <h4>Für Kunden</h4>
+        <ul class="pk-links">
+          <li><a href="TODO_URL_ABLAUF">So läuft die Zusammenarbeit</a></li>
+          <li><a href="TODO_URL_FAQ">FAQ</a></li>
+          <li><a href="TODO_URL_PREISE">Preise &amp; Pakete</a></li>
+          <li><a href="TODO_URL_REFERENZEN">Referenzen</a></li>
+          <li><a href="TODO_URL_TOOLS">Tools für Briefing &amp; Skript</a></li>
+        </ul>
+      </nav>
+
+      <nav class="pk-col" aria-label="Footer Navigation Ressourcen">
+        <h4>Ressourcen</h4>
+        <ul class="pk-links">
+          <li><a href="TODO_URL_BLOG">Blog</a></li>
+          <li><a href="TODO_URL_TIPPS">Tipps zur Sprecherbuchung</a></li>
+          <li><a href="TODO_URL_DOWNLOADS">Downloads</a></li>
+          <li><a href="TODO_URL_STUDIO">Studio-Einblicke</a></li>
+          <li><a href="TODO_URL_TECHNIK">Technik &amp; Specs</a></li>
+        </ul>
+      </nav>
+
+      <section class="pk-col pk-contact-card pk-card" aria-labelledby="pk-contact-title">
+        <h4 id="pk-contact-title">Kontakt</h4>
+        <address>
+          <span>PK Voice Studio<br>TODO_ADDRESS_STREET<br>TODO_ADDRESS_CITY</span>
+          <a href="mailto:TODO_EMAIL">TODO_EMAIL</a>
+          <a href="tel:TODO_PHONE">TODO_PHONE</a>
+          <span>Antwortzeit: meist innerhalb weniger Stunden.</span>
+        </address>
+        <p style="margin-top:14px;"><a class="pk-btn pk-btn--ghost" href="TODO_URL_RUECKRUF">Rückruf anfordern</a></p>
+      </section>
+    </div>
+
+    <section class="pk-news pk-card" aria-labelledby="pk-news-title">
+      <h4 id="pk-news-title">Updates zu Stimme, Produktion &amp; neuen Hörproben</h4>
+      <p>Erhalte kompakte Praxis-Tipps, neue Referenzen und technische Insights direkt in dein Postfach.</p>
+      <form class="pk-news-form" id="pk-news-form-2026" novalidate>
+        <label for="pk-news-email-2026" class="screen-reader-text" style="position:absolute;left:-9999px;">E-Mail-Adresse</label>
+        <input id="pk-news-email-2026" class="pk-news-input" name="email" type="email" inputmode="email" autocomplete="email" placeholder="deine@email.de" aria-describedby="pk-news-note-2026 pk-news-msg-2026" required>
+        <button class="pk-btn pk-btn--primary" type="submit">Updates erhalten</button>
+      </form>
+      <p id="pk-news-note-2026" class="pk-note">Mit dem Absenden stimmst du dem Erhalt von E-Mails zu. Abmeldung jederzeit möglich. Keine Tracking-Tools in diesem Formular.</p>
+      <p id="pk-news-msg-2026" class="pk-form-msg" aria-live="polite"></p>
+    </section>
+
+    <div class="pk-bottom">
+      <p>© <span id="pk-year-2026">2026</span> PK Voice Studio</p>
+      <nav aria-label="Rechtliches">
+        <ul class="pk-legal">
+          <li><a href="TODO_URL_IMPRESSUM">Impressum</a></li>
+          <li><a href="TODO_URL_DATENSCHUTZ">Datenschutz</a></li>
+          <li><a href="TODO_URL_AGB">AGB</a></li>
+          <li><a href="TODO_URL_COOKIE">Cookie-Einstellungen</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="pk-top-btn" aria-label="Zurück nach oben">↑</button>
     </div>
   </div>
 
-  <div class="pk-footer__main">
-    <section class="pk-footer__col" aria-labelledby="pk-footer-brand-title">
-      <h3 id="pk-footer-brand-title">Sprecher Pascal Krell</h3>
-      <p>Professionelle Voiceover-Produktionen für Werbung, Imagefilm, E-Learning und digitale Formate – effizient, markenkonform und mit persönlicher Betreuung.</p>
-      <p class="pk-footer__microtrust" aria-label="Vertrauenshinweis">★★★★★ <strong>150+ Kunden</strong> vertrauen auf klare, hochwertige Sprachproduktionen.</p>
+  <script>
+    (function () {
+      var footer = document.getElementById('pk-footer-2026');
+      if (!footer) return;
 
-      <nav aria-label="Social Media">
-        <ul class="pk-footer__social">
-          <li><a href="#" aria-label="LinkedIn">LI</a></li> <!-- TODO: Link ersetzen -->
-          <li><a href="#" aria-label="Instagram">IG</a></li> <!-- TODO: Link ersetzen -->
-          <li><a href="#" aria-label="YouTube">YT</a></li> <!-- TODO: Link ersetzen -->
-        </ul>
-      </nav>
-    </section>
+      var yearNode = footer.querySelector('#pk-year-2026');
+      if (yearNode) yearNode.textContent = String(new Date().getFullYear());
 
-    <nav class="pk-footer__col" aria-labelledby="pk-footer-services-title">
-      <h4 id="pk-footer-services-title">Leistungen</h4>
-      <ul class="pk-footer__links">
-        <li><a href="#">Sprachaufnahmen</a></li> <!-- TODO: Link ersetzen -->
-        <li><a href="#">Werbung / Imagefilm</a></li> <!-- TODO: Link ersetzen -->
-        <li><a href="#">Erklärvideo</a></li> <!-- TODO: Link ersetzen -->
-        <li><a href="#">Podcast-Service</a></li> <!-- TODO: Link ersetzen -->
-        <li><a href="#">Audio-Schnitt</a></li> <!-- TODO: Link ersetzen -->
-        <li><a href="#">Studio / Technik</a></li> <!-- TODO: Link ersetzen -->
-      </ul>
-    </nav>
+      var topBtn = footer.querySelector('.pk-top-btn');
+      if (topBtn) {
+        topBtn.addEventListener('click', function () {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
 
-    <nav class="pk-footer__col" aria-label="Footer Navigation" aria-labelledby="pk-footer-client-title">
-      <h4 id="pk-footer-client-title">Für Kunden</h4>
-      <ul class="pk-footer__links">
-        <li><a href="#">Preise / Honorar</a></li> <!-- TODO: Link ersetzen -->
-        <li><a href="#">Ablauf / Zusammenarbeit</a></li> <!-- TODO: Link ersetzen -->
-        <li><a href="#">FAQ</a></li> <!-- TODO: Link ersetzen -->
-        <li><a href="#">Referenzen</a></li> <!-- TODO: Link ersetzen -->
-        <li><a href="#">Kontakt</a></li> <!-- TODO: Link ersetzen -->
-        <li><a href="#">Skript-Analyse Tool</a></li> <!-- TODO: Link ersetzen oder entfernen -->
-      </ul>
-    </nav>
+      var form = footer.querySelector('#pk-news-form-2026');
+      if (!form) return;
 
-    <section class="pk-footer__col" aria-labelledby="pk-footer-contact-title">
-      <h4 id="pk-footer-contact-title">Kontakt</h4>
-      <address class="pk-footer__contact">
-        <a href="mailto:TODO_EMAIL">TODO_EMAIL</a>
-        <a href="tel:TODO_PHONE">TODO_PHONE</a>
-        <p>Antwort meist innerhalb von 24 Std.</p>
-        <p>Standort: TODO_STADT / Region</p>
-      </address>
-      <a class="pk-footer__callback" href="#">Rückruf anfordern</a> <!-- TODO: Link ersetzen -->
-    </section>
-  </div>
+      var emailInput = form.querySelector('#pk-news-email-2026');
+      var msg = footer.querySelector('#pk-news-msg-2026');
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
-  <div class="pk-footer__bottom">
-    <p>© <span id="pk-footer-year">2026</span> Sprecher Pascal Krell</p>
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        if (!emailInput || !msg) return;
 
-    <nav aria-label="Rechtliches">
-      <ul class="pk-footer__legal">
-        <li><a href="#">Impressum</a></li> <!-- TODO: Link ersetzen -->
-        <li><a href="#">Datenschutz</a></li> <!-- TODO: Link ersetzen -->
-        <li><a href="#">AGB</a></li> <!-- TODO: Link ersetzen oder entfernen -->
-        <li><a href="#">Cookie-Einstellungen</a></li> <!-- TODO: Link ersetzen -->
-      </ul>
-    </nav>
+        var value = (emailInput.value || '').trim();
+        if (!emailRegex.test(value)) {
+          msg.textContent = 'Bitte gib eine gültige E-Mail-Adresse ein.';
+          msg.setAttribute('data-state', 'error');
+          emailInput.setAttribute('aria-invalid', 'true');
+          emailInput.focus();
+          return;
+        }
 
-    <button class="pk-footer__totop" type="button" aria-label="Nach oben scrollen">↑</button>
-  </div>
+        emailInput.setAttribute('aria-invalid', 'false');
+        msg.textContent = 'Danke! Deine Anmeldung wurde lokal validiert. Verbinde das Formular jetzt mit deinem E-Mail-Tool.';
+        msg.setAttribute('data-state', 'success');
+        form.reset();
+      });
+    })();
+  </script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Sprecher Pascal Krell",
-    "url": "https://www.example.com",
-    "email": "TODO_EMAIL",
-    "telephone": "TODO_PHONE",
-    "areaServed": "TODO_REGION",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "TODO_STADT",
-      "addressCountry": "DE"
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "TODO_NAME",
+      "url": "TODO_URL_WEBSITE",
+      "email": "TODO_EMAIL",
+      "telephone": "TODO_PHONE",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "TODO_ADDRESS_STREET",
+        "addressLocality": "TODO_ADDRESS_CITY",
+        "postalCode": "TODO_ADDRESS_POSTAL",
+        "addressCountry": "DE"
+      }
     }
-  }
   </script>
 </footer>
-```
-
-## CSS (in Customizer/Blocksy Custom CSS oder Theme CSS)
-
-```css
-.pk-footer {
-  --pk-blue: #1a93ee;
-  --pk-blue-dark: #0066b3;
-  --pk-bg: #0f141a;
-  --pk-text: rgba(255, 255, 255, 0.85);
-  --pk-muted: rgba(255, 255, 255, 0.65);
-  --pk-line: rgba(255, 255, 255, 0.08);
-  --pk-radius: 18px;
-  --pk-shadow: 0 0 0 1px rgba(26, 147, 238, 0.07), 0 14px 36px rgba(26, 147, 238, 0.08);
-
-  font-family: "Rubik", system-ui, -apple-system, "Segoe UI", sans-serif;
-  color: var(--pk-text);
-  background: linear-gradient(180deg, #111922 0%, var(--pk-bg) 100%);
-  border-top: 1px solid var(--pk-line);
-  padding: clamp(24px, 4vw, 48px) clamp(18px, 4vw, 56px);
-  display: grid;
-  gap: clamp(22px, 2.8vw, 36px);
-}
-
-.pk-footer *,
-.pk-footer *::before,
-.pk-footer *::after {
-  box-sizing: border-box;
-}
-
-.pk-footer a {
-  color: inherit;
-  text-decoration-color: transparent;
-  text-underline-offset: 0.18em;
-  transition: color 0.2s ease, text-decoration-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
-}
-
-.pk-footer a:hover,
-.pk-footer a:focus-visible {
-  color: var(--pk-blue);
-  text-decoration-color: rgba(26, 147, 238, 0.55);
-}
-
-.pk-footer a:focus-visible,
-.pk-footer button:focus-visible {
-  outline: 2px solid var(--pk-blue);
-  outline-offset: 2px;
-}
-
-.pk-footer__top {
-  display: grid;
-  gap: 18px;
-  align-items: center;
-  grid-template-columns: 1.15fr auto auto;
-  padding: clamp(18px, 2.4vw, 24px);
-  border: 1px solid var(--pk-line);
-  border-radius: var(--pk-radius);
-  background: rgba(255, 255, 255, 0.02);
-  box-shadow: var(--pk-shadow);
-}
-
-.pk-footer__value-prop {
-  margin: 0;
-  max-width: 58ch;
-  line-height: 1.5;
-}
-
-.pk-footer__trust {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.pk-footer__trust li {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 12px;
-  border: 1px solid var(--pk-line);
-  border-radius: 999px;
-  color: var(--pk-muted);
-  font-size: 0.87rem;
-  white-space: nowrap;
-}
-
-.pk-footer__trust svg {
-  width: 14px;
-  height: 14px;
-  fill: var(--pk-blue);
-}
-
-.pk-footer__quick-cta {
-  display: flex;
-  gap: 10px;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-}
-
-.pk-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 44px;
-  padding: 10px 16px;
-  border-radius: 999px;
-  border: 1px solid transparent;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.pk-btn--primary {
-  background: linear-gradient(145deg, var(--pk-blue), var(--pk-blue-dark));
-  color: #fff;
-  box-shadow: 0 8px 24px rgba(26, 147, 238, 0.25);
-}
-
-.pk-btn--primary:hover,
-.pk-btn--primary:focus-visible {
-  color: #fff;
-  background: linear-gradient(145deg, #1892f4, var(--pk-blue-dark));
-}
-
-.pk-btn--ghost {
-  border-color: var(--pk-line);
-  background: rgba(255, 255, 255, 0.02);
-}
-
-.pk-btn--ghost:hover,
-.pk-btn--ghost:focus-visible {
-  background: rgba(26, 147, 238, 0.12);
-  border-color: rgba(26, 147, 238, 0.45);
-}
-
-.pk-footer__main {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(20px, 2.5vw, 32px);
-}
-
-.pk-footer__col {
-  min-width: 0;
-}
-
-.pk-footer h3,
-.pk-footer h4 {
-  margin: 0 0 12px;
-  color: #fff;
-  line-height: 1.2;
-}
-
-.pk-footer h3 { font-size: clamp(1.15rem, 1.3vw, 1.35rem); }
-.pk-footer h4 { font-size: 1rem; }
-
-.pk-footer p {
-  margin: 0 0 12px;
-  color: var(--pk-muted);
-  line-height: 1.6;
-}
-
-.pk-footer__microtrust strong { color: #fff; font-weight: 600; }
-
-.pk-footer__social,
-.pk-footer__links,
-.pk-footer__legal {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.pk-footer__social {
-  display: flex;
-  gap: 10px;
-  padding-top: 4px;
-}
-
-.pk-footer__social a {
-  width: 36px;
-  height: 36px;
-  border-radius: 999px;
-  border: 1px solid var(--pk-line);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.72rem;
-  letter-spacing: 0.02em;
-  background: rgba(255, 255, 255, 0.015);
-  color: var(--pk-text);
-}
-
-.pk-footer__social a:hover,
-.pk-footer__social a:focus-visible {
-  background: rgba(26, 147, 238, 0.16);
-  border-color: rgba(26, 147, 238, 0.5);
-  box-shadow: 0 0 0 1px rgba(26, 147, 238, 0.25), 0 8px 20px rgba(26, 147, 238, 0.2);
-}
-
-.pk-footer__links li + li,
-.pk-footer__legal li + li {
-  margin-top: 10px;
-}
-
-.pk-footer__links a {
-  color: var(--pk-muted);
-}
-
-.pk-footer__contact {
-  margin: 0;
-  display: grid;
-  gap: 10px;
-  font-style: normal;
-}
-
-.pk-footer__contact a {
-  width: fit-content;
-  color: #fff;
-  font-weight: 600;
-}
-
-.pk-footer__callback {
-  display: inline-flex;
-  align-items: center;
-  margin-top: 12px;
-  padding: 8px 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(26, 147, 238, 0.35);
-  background: rgba(26, 147, 238, 0.1);
-  font-size: 0.88rem;
-  font-weight: 600;
-}
-
-.pk-footer__bottom {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 14px 22px;
-  padding-top: 18px;
-  border-top: 1px solid var(--pk-line);
-}
-
-.pk-footer__bottom p {
-  margin: 0;
-  font-size: 0.9rem;
-}
-
-.pk-footer__legal {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 16px;
-}
-
-.pk-footer__legal li + li { margin-top: 0; }
-
-.pk-footer__totop {
-  margin-left: auto;
-  width: 42px;
-  height: 42px;
-  border-radius: 999px;
-  border: 1px solid var(--pk-line);
-  background: rgba(255, 255, 255, 0.03);
-  color: #fff;
-  cursor: pointer;
-  font-size: 1.05rem;
-  line-height: 1;
-}
-
-.pk-footer__totop:hover,
-.pk-footer__totop:focus-visible {
-  background: rgba(26, 147, 238, 0.16);
-  border-color: rgba(26, 147, 238, 0.5);
-}
-
-@media (max-width: 1080px) {
-  .pk-footer__top {
-    grid-template-columns: 1fr;
-    justify-items: start;
-  }
-
-  .pk-footer__quick-cta {
-    justify-content: flex-start;
-  }
-
-  .pk-footer__main {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 640px) {
-  .pk-footer {
-    padding-inline: 16px;
-  }
-
-  .pk-footer__main {
-    grid-template-columns: 1fr;
-  }
-
-  .pk-footer__bottom {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .pk-footer__totop {
-    margin-left: 0;
-  }
-}
-```
-
-## JS (optional, nur für Back-to-top)
-
-```html
-<script>
-  (function () {
-    const footer = document.querySelector('.pk-footer');
-    if (!footer) return;
-
-    const yearNode = footer.querySelector('#pk-footer-year');
-    if (yearNode) yearNode.textContent = String(new Date().getFullYear());
-
-    const toTopBtn = footer.querySelector('.pk-footer__totop');
-    if (!toTopBtn) return;
-
-    toTopBtn.addEventListener('click', function () {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  })();
-</script>
 ```
