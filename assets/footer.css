@@ -242,7 +242,7 @@
 .pk-newsletter-box {
   grid-column: 1 / 4; grid-row: 2; justify-self: center; max-width: 680px; width: 100%;
   background: #ffffff; border: 1px solid var(--pk-border-on-light); border-radius: var(--pk-radius);
-  padding: 36px 40px 28px; text-align: center; box-shadow: 0 20px 40px -8px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.02); position: relative; overflow: hidden;
+  padding: 36px 40px 18px; text-align: center; box-shadow: 0 20px 40px -8px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.02); position: relative; overflow: hidden;
 }
 .pk-newsletter-box::before { content: 'TIPP!'; position: absolute; top: 22px; left: -35px; width: 140px; text-align: center; transform: rotate(-45deg); background: var(--pk-primary); color: #fff; padding: 6px 0; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; box-shadow: 0 4px 10px rgba(0,0,0,0.1); pointer-events: none; }
 .pk-newsletter-box h3 { font-size: 1.25rem; color: var(--pk-text-on-light); margin: 0 0 12px; font-weight: 700; }
@@ -275,7 +275,7 @@
   flex-wrap: wrap !important;
   align-items: center !important;
   justify-content: center !important;
-  gap: 12px !important;
+  gap: 8px !important;
   width: 100% !important;
   max-width: 540px !important;
   margin: 0 auto !important;
@@ -582,7 +582,7 @@
     align-items: stretch !important;
     justify-content: center !important;
     max-width: 100% !important;
-    row-gap: 12px !important;
+    row-gap: 8px !important;
   }
   .pk-fluentform-wrapper .ff-el-group:not(.ff_submit_btn_wrapper),
   .pk-fluentform-wrapper .ff_submit_btn_wrapper {
